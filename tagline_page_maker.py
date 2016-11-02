@@ -12,6 +12,7 @@ def main():
         os.remove(output_file)
     except OSError:
         pass
+        
     s3_client = boto3.client('s3')
     s3_client.download_file('verge-taglines', filename, filename)
 
