@@ -1,6 +1,7 @@
 from tagline_extractor import check_for_new_tagline
 from page_constructor import render_page
 import boto3
+import os
 
 
 def main():
