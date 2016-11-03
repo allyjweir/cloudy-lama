@@ -11,7 +11,7 @@ def _extract_tagline():
 
 
 def _clean_text(tagline):
-    return tagline.string \
+    return tagline.prettify() \
                   .replace('\n', '') \
                   .lstrip() \
                   .rstrip()
