@@ -13,7 +13,7 @@ def main():
         os.remove(output_file)
     except OSError:
         pass
-        
+
     s3_client = boto3.client('s3')
     s3_client.download_file('verge-taglines', filename, filename)
 
@@ -24,8 +24,8 @@ def main():
     with open(output_file, 'w') as f:
         f.write(page_html)
 
-    s3_client.upload_file('verge-taglines', output_file, output_file)
-    s3_client.upload_file('verge-taglines', filename, filename)
+    s3_client.upload_file(output_file, 'verge-taglines', output_file)
+    s3_client.upload_file(filename, 'verge-taglines', filename)
 
     print ('fin.')
 
