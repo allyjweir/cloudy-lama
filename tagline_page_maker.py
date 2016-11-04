@@ -24,7 +24,7 @@ def main():
     with open(output_file, 'w') as f:
         f.write(page_html)
 
-    s3_client.upload_file(output_file, 'verge-taglines', output_file, extra_args={'Metadata': {'ContentType':'text/html'}})
+    s3_client.upload_file(output_file, 'verge-taglines', output_file, ExtraArgs={'Metadata': {'ContentType':'text/html'}})
     s3_client.upload_file(filename, 'verge-taglines', filename)
 
     print ('fin.')
